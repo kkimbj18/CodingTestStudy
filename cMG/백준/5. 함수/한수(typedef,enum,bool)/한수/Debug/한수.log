@@ -1,3 +1,0 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(459,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (한수.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  소스.c
-  한수.vcxproj -> C:\Users\82107\Documents\cMG\한수(typedef,enum,bool)\Debug\한수(typedef,enum,bool).exe
