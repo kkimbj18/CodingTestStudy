@@ -9,8 +9,8 @@ public class Main {
 
         int[][] num = new int[N][M];
 
-        for (let i = 0; i < N; i++) {
-            for (let j = 0; j < M; j++) {
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < M; j++) {
                 num[i][j] = scan.nextInt();
             }
             Arrays.sort(num[i]);
@@ -18,12 +18,14 @@ public class Main {
 
         int max = 0;
 
-        for (let i = 0; i < N; i++) {
+        for (int i = 0; i < N; i++) {
             if (num[i][0] > max) {
                 max = num[i][0];
             }
         }
         
         System.out.println(max);
+
+        scan.close();
     }
 }

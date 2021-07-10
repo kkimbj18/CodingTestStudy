@@ -27,5 +27,7 @@ public class Main {
         sum = m * big - (m / (k + 1)) * (big - sBig);
 
         System.out.println(sum);
+
+        scan.close();
     }
 }
