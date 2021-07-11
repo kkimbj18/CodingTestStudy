@@ -10,7 +10,7 @@ public class Main {
         int count = 0;
 
         while (true) {
-            if (N == 1)
+            if (N < K)
                 break;
 
             if (N % K == 0)
@@ -19,7 +19,10 @@ public class Main {
                 N -= 1;
 
             count++;
+            System.out.println(count);
         }
+
+        count += N-1;
 
         System.out.println(count);
 
