@@ -8,7 +8,7 @@ public class Main {
         int count = 0;
 
         for (int i = 0; i <= N; i++) {
-            count += countThree(i, "3");
+            count += countPerHour(i, "3");
         }
 
         System.out.println(count);
@@ -16,7 +16,7 @@ public class Main {
         sc.close();
     }
 
-    public static int countThree(int i, String target) {
+    public static int countPerHour(int i, String target) {
         int countTemp = 0;
 
         int hourTemp = i;
