@@ -40,7 +40,7 @@ public class Main {
                 int temp = arr[right];
                 arr[right] = arr[pivot];
                 arr[pivot] = temp;
-            } else {
+            } else {                                                                                                                                                                                                                                      
                 int temp = arr[right];
                 arr[right] = arr[left];
                 arr[left] = temp;

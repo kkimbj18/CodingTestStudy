@@ -26,11 +26,11 @@ public class Main {
 
         int index = -1;
 
-        ArrayList<Person> people = new ArrayList<>();
+        ArrayList<String[]> people = new ArrayList<>();
 
         for (String information : info) {
             String[] infoArr = information.split(" ");
-            people.add(new Person(infoArr));
+            people.add(infoArr);
         }
 
         for (String q : query) {
@@ -46,26 +46,24 @@ public class Main {
             queryArr[3] = temp2[0];
             queryArr[4] = temp2[1];
 
-            Query tempQ = new Query(queryArr);
-
-            for (Person p : people) {
-                if (!tempQ.lang.equals("-")) {
-                    if (!tempQ.lang.equals(p.lang))
+            for (String[] p : people) {
+                if (!queryArr[0].equals("-")) {
+                    if (queryArr[0].charAt(0) != p[0].charAt(0))
                         continue;
                 }
-                if (!tempQ.job.equals("-")) {
-                    if (!tempQ.job.equals(p.job))
+                if (!queryArr[1].equals("-")) {
+                    if (queryArr[1].charAt(0) != p[1].charAt(0))
                         continue;
                 }
-                if (!tempQ.career.equals("-")) {
-                    if (!tempQ.career.equals(p.career))
+                if (!queryArr[2].equals("-")) {
+                    if (queryArr[2].charAt(0) != p[2].charAt(0))
                         continue;
                 }
-                if (!tempQ.food.equals("-")) {
-                    if (!tempQ.food.equals(p.food))
+                if (!queryArr[3].equals("-")) {
+                    if (queryArr[3].charAt(0) != p[3].charAt(0))
                         continue;
                 }
-                if (tempQ.score > p.score)
+                if (Integer.parseInt(queryArr[4]) > Integer.parseInt(p[4]))
                     continue;
 
                 answer[index]++;
@@ -73,37 +71,5 @@ public class Main {
         }
 
         return answer;
-    }
-}
-
-class Person {
-    public String lang;
-    public String job;
-    public String career;
-    public String food;
-    public int score;
-
-    public Person(String[] infoArr) {
-        this.lang = infoArr[0];
-        this.job = infoArr[1];
-        this.career = infoArr[2];
-        this.food = infoArr[3];
-        this.score = Integer.parseInt(infoArr[4]);
-    }
-}
-
-class Query {
-    public String lang;
-    public String job;
-    public String career;
-    public String food;
-    public int score;
-
-    public Query(String[] queryArr) {
-        this.lang = queryArr[0];
-        this.job = queryArr[1];
-        this.career = queryArr[2];
-        this.food = queryArr[3];
-        this.score = Integer.parseInt(queryArr[4]);
     }
 }
