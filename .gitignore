@@ -1,3 +1,4 @@
 .vscode/
-카카오/
-토스/
+kakao/
+toss/
+kakao/**/*
