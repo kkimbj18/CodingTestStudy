@@ -1,3 +1,5 @@
+package BackJoon.dfs.DFS¿ÍBFS;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 

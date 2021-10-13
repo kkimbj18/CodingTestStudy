@@ -1,4 +1,4 @@
-package ì•Œê³ ë¦¬ì¦˜.ì¡°í•©;
+package Algorithm.Á¶ÇÕ;
 
 public class Main {
     public void combination(String order, boolean[] visited, int start, int n, int r) {
