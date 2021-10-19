@@ -1,4 +1,4 @@
-package 두_전구;
+package SWExpert.두_전구;
 
 import java.util.Scanner;
 
