@@ -12,4 +12,5 @@ module CodingTest {
 	exports SWExpert.두_전구;
 	exports Algorithm.Map정렬;
 	exports BackJoon.BackTracking.N과M4;
+	exports BackJoon.Samsung.뱀;
 }
