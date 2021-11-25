@@ -1,4 +1,4 @@
-public class quick {
+public class Quick {
     public static void main(String[] args) {
         int[] arr = { 675, 235, 59, 100, 48, 1, 3, 354, 3, 234, 6557, 878787, 12 };
 
