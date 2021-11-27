@@ -30,12 +30,10 @@ public class Main {
         while (true) {
             boolean[][] checked = new boolean[N][M];
             int icePartNum = 0;
-            int restIceNum = 0;
 
             for (int i = 0; i < N; i++) {
                 for (int j = 0; j < M; j++) {
                     if (map[i][j] > 0 && !checked[i][j]) {
-                        restIceNum++;
                         if (icePartNum > 0)
                             break Loop1;
                         dfs(i, j, checked);
@@ -44,7 +42,7 @@ public class Main {
                 }
             }
 
-            if (restIceNum == 0) {
+            if (icePartNum == 0) {
                 count = 0;
                 break;
             }
