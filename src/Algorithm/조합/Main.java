@@ -1,5 +1,3 @@
-package Algorithm.а╤гу;
-
 public class Main {
     public void combination(String order, boolean[] visited, int start, int n, int r) {
         if (r == 0) {
