@@ -1,6 +1,10 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class Main {
     static Object[] objectArr;
@@ -8,18 +12,20 @@ public class Main {
     static int K;
     static int N;
 
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        N = sc.nextInt();
-        K = sc.nextInt();
+        N = Integer.parseInt(st.nextToken());
+        K = Integer.parseInt(st.nextToken());
 
         dp = new int[N+1][K + 1];
         objectArr = new Object[N+1];
 
         for (int i = 1; i <= N; i++) {
-            int wTemp = sc.nextInt();
-            int vTemp = sc.nextInt();
+            st = new StringTokenizer(br.readLine());
+            int wTemp = Integer.parseInt(st.nextToken());
+            int vTemp = Integer.parseInt(st.nextToken());
 
             objectArr[i] = new Object(wTemp, vTemp);
         }
