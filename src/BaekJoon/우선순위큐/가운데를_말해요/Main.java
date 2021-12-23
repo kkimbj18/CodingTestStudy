@@ -28,16 +28,16 @@ public class Main {
                     pq2.add(arr[i]);
                 } else {
                     pq1.poll();
-                    pq1.add(arr[i]);
                     pq2.add(target);
+                    pq1.add(arr[i]);
                 }
             } else {
                 int target = pq2.peek();
 
                 if (arr[i] > target) {
                     pq2.poll();
-                    pq2.add(arr[i]);
                     pq1.add(target);
+                    pq2.add(arr[i]);
                 } else {
                     pq1.add(arr[i]);
                 }

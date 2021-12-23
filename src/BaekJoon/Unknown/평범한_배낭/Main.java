@@ -30,8 +30,6 @@ public class Main {
             objectArr[i] = new Object(wTemp, vTemp);
         }
 
-        sc.close();
-
         for (int i = 1; i <= N; i++) {
             for (int j = 1; j <= K; j++) {
                 if (j >= objectArr[i].w)
