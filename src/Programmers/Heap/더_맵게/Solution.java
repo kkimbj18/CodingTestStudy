@@ -1,3 +1,5 @@
+package Programmers.Heap.더_맵게;
+
 import java.util.*;
 
 class Solution {
