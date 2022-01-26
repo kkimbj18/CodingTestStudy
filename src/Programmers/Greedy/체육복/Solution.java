@@ -1,7 +1,5 @@
 package Programmers.Greedy.체육복;
 
-// import java.util.Arrays;
-
 class Solution {
     public int solution(int n, int[] lost, int[] reserve) {
         int answer = n;
@@ -14,8 +12,6 @@ class Solution {
         for (int r: reserve) {
             arr[r]++;
         }
-
-        // Arrays.sort(lost);
 
         for (int l = 1; l <= n; l++) {
             if (arr[l] != -1) continue;
