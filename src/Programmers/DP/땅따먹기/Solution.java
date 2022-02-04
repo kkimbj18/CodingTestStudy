@@ -1,3 +1,5 @@
+package Programmers.DP.땅따먹기;
+
 import java.util.*;
 
 class Solution {
