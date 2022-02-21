@@ -1,67 +1,75 @@
 package BaekJoon.Unknown.행렬_제곱;
-import java.util.Scanner;
+
+import java.io.*;
+import java.util.*;
 
 public class Main {
-    
-    static int[][] matrix;
-    static int[][] newMatrix;
-    static int[][] tempMatrix;
+
     static int N;
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
+    static Map<Long, int[][]> matrixDP;
+    static int[][] unitMatrix;
+    public static void main(String[] args) throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringTokenizer st = new StringTokenizer(br.readLine());
 
-        N = sc.nextInt();
-        long B = sc.nextLong();
+        N = Integer.parseInt(st.nextToken());
+        long B = Long.parseLong(st.nextToken());
 
-        matrix = new int[N][N];
-        newMatrix = new int[N][N];
-        tempMatrix = new int[N][N];
+        int[][] matrix = new int[N][N];
+        unitMatrix = new int[N][N];
+        for (int i = 0; i < N; i++) {
+            unitMatrix[i][i] = 1;
+        }
+        matrixDP = new HashMap<>();
 
         for (int i = 0; i < N; i++) {
+            st = new StringTokenizer(br.readLine());
+
             for (int j = 0; j < N; j++) {
-                matrix[i][j] = sc.nextInt();
-                newMatrix[i][j] = matrix[i][j];
+                matrix[i][j] = Integer.parseInt(st.nextToken());
             }
         }
 
-        sc.close();
+        int[][] result = pow(matrix, B);
 
-        for (long b = 1; b <= B/2; b++) {
-            pow(newMatrix, newMatrix);
-        }
-
-        if (B % 2 == 1) {
-            pow(newMatrix, matrix);
-        }
-
-        print();
+        print(result);
     }
 
-    public static void pow(int[][] matrix, int[][] oMatrix) {
-
-        for (int z = 0; z < N; z++) {
-            for (int j = 0; j < N; j++) {
-                long sum = 0;
-
-                for (int i = 0; i < N; i++) {
-                    sum += (long)matrix[z][i] * oMatrix[i][j];
-                }
-
-                tempMatrix[z][j] = (int)(sum % 1000);
-            }
-        }
-
-        for (int i = 0; i < N; i++) {
-            newMatrix[i] = tempMatrix[i].clone();
-        }
-    }
-
-    public static void print() {
+    private static void print(int[][] result) {
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
-                System.out.print(newMatrix[i][j] + " ");
+                System.out.print(result[i][j] + " ");
             }
             System.out.println();
         }
     }
+
+    private static int[][] pow(int[][] matrix, long b) {
+        if (b == 1) return mul(matrix, unitMatrix);
+
+        if (matrixDP.get(b) != null) return matrixDP.get(b);
+
+        int[][] newMatrix = (b % 2 == 0) ? mul(pow(matrix, b/2), pow(matrix, b/2)) : mul(mul(pow(matrix, b/2), pow(matrix, b/2)), matrix);
+
+        matrixDP.put(b, newMatrix);
+        return newMatrix;
+    }
+
+    private static int[][] mul(int[][] m1, int[][] m2) {
+        int[][] newMatrix = new int[N][N];
+
+        for (int i = 0; i < N; i++) {
+            for (int j = 0; j < N; j++) {
+                int sum = 0;
+                for (int k = 0; k < N; k++) {
+                    sum += m1[i][k] * m2[k][j];
+                }
+                sum %= 1000;
+                newMatrix[i][j] = sum;
+            }
+        }
+
+        return newMatrix;
+    }
 }
+
