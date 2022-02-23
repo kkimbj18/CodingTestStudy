@@ -1,7 +1,7 @@
 package BaekJoon.Unknown.행렬_제곱;
 import java.util.Scanner;
 
-public class Main {
+public class Main2 {
     
     static int[][] matrix;
     static int[][] newMatrix;
